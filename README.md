@@ -252,7 +252,6 @@ package org.example
 
 fun KniRegister.initBridge() {
     register(StringUtil)  // Register all methods in StringUtil
-    kniOnRegisterPlatform()
 }
 
 @CName("JNI_OnLoad")

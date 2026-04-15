@@ -285,7 +285,6 @@ package org.example
 
 fun KniRegister.initBridge() {
     register(StringUtil)  // 注册 StringUtil 中的所有方法
-    kniOnRegisterPlatform()
 }
 
 @CName("JNI_OnLoad")
