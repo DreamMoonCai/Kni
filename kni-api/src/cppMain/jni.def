@@ -1,0 +1,5 @@
+headers = jni.h
+package = platform.jni
+
+headerFilter = **
+compilerOpts = -I/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/include/darwin

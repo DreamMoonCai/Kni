@@ -1,0 +1,122 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kni-api/1.0.3/kni-api-1.0.3.module",
+    "group": "io.github.dreammooncai",
+    "module": "kni-api",
+    "version": "1.0.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.4.0-milestone-5"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "io.github.oshai",
+          "module": "kotlin-logging",
+          "version": {
+            "requires": "8.0.01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "io.github.dreammooncai",
+          "module": "multiplatform-everything",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect"
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.3.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kni-api-androidNativeX64Main-1.0.3.klib",
+          "url": "kni-api-androidnativex64-1.0.3.klib",
+          "size": 311822,
+          "sha512": "5052d3e00e92bfdd37420140a13a975d0538ab3dc9aa6151a99a70fdf0f0b4ec8fb71a48642a437ea593562da9d42af5ba4c4bd31c44b4e14c2dc27dbd42aab2",
+          "sha256": "432fc82fa34598fbf693f877a36e99b8f6cd0ddd4b5f612835b50dfc1d4f2ef6",
+          "sha1": "ca9bb2a02a9fe9b60c31f6deaac9d3ba709a44d3",
+          "md5": "42f4f503d8d06efcb956f96cacb1acbf"
+        },
+        {
+          "name": "kni-api-androidNativeX64Cinterop-jniMain-1.0.3.klib",
+          "url": "kni-api-androidnativex64-1.0.3-cinterop-jni.klib",
+          "size": 16383,
+          "sha512": "be4793a2bdc2b0d3b970264fc4181d8bc58c7b9a4843a95420e9dc732222e2047b75b3979bbb79bc9f8bebe7c09e7996c3fa768c7b4b6cf1a7a5323df30a5206",
+          "sha256": "cd37e2b94c74f05a45f6458a832a2cf39360a1e9995810d5d2c1cd7712314c62",
+          "sha1": "6e1bb9d2be3cf9661ccb35cec254687936b127f3",
+          "md5": "173d10595555c45e7b250cd64c6ae1f8"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kni-api-androidnativex64-1.0.3-sources.jar",
+          "url": "kni-api-androidnativex64-1.0.3-sources.jar",
+          "size": 41766,
+          "sha512": "3f4e9ce75a99082334fcc02d3dd4599e17bfe76894bb64378fee0ed587b3693e2d02c97693dc3b63eb5f17e273886ea31d20f3465c4e47687a1e20596cf93649",
+          "sha256": "6b4bb34915d06b5395272b93efbdd265be209f790daaba3c172c9b5348ee8fb6",
+          "sha1": "f613101d30e12a4ab0638e427e2434ae455269e0",
+          "md5": "f5aa7f1d0bd35fcf0719a24abbf1fa4c"
+        }
+      ]
+    }
+  ]
+}

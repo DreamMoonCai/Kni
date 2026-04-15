@@ -1,0 +1,122 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kni-api/1.0.1/kni-api-1.0.1.module",
+    "group": "io.github.dreammooncai",
+    "module": "kni-api",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "windowsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "io.github.oshai",
+          "module": "kotlin-logging",
+          "version": {
+            "requires": "7.0.14"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "io.github.dreammooncai",
+          "module": "multiplatform-everything",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect"
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kni-api-windowsMain-1.0.1.klib",
+          "url": "kni-api-windows-1.0.1.klib",
+          "size": 314043,
+          "sha512": "8d94058ae134ab4a58555cfd0da730fe461a45345de6c5746ae20246b55c08f7decc40f06b67a988d2a7e03827cabf138c9cd03092a589d8601e89c2f95ce1fc",
+          "sha256": "35c09470248e1d0d9d187560744f4936a2adbb2c5fe9cdffdd9f2515a9f50785",
+          "sha1": "b18f5d60df1de40fbb781b24cc4060ee5f77ed42",
+          "md5": "177e2ea8032a0360a623e338946c873e"
+        },
+        {
+          "name": "kni-api-windowsCinterop-jniMain-1.0.1.klib",
+          "url": "kni-api-windows-1.0.1-cinterop-jni.klib",
+          "size": 16156,
+          "sha512": "ab9fa6a3ced79b3fdab1a185882e5e61caccecd609315baf55abaed617d3e152d2a60eea4917298925def2afc4f24aa39d114965e3a35d2d7441ad4b268167fd",
+          "sha256": "eff895e4da6172175693cb839ddd7f5d163b9126dda844697999040ae1223a4f",
+          "sha1": "c42cbc1c702df2615887714b03ea548d0b979218",
+          "md5": "43bbcb3d7df006b151d32e647b3572fe"
+        }
+      ]
+    },
+    {
+      "name": "windowsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kni-api-windows-1.0.1-sources.jar",
+          "url": "kni-api-windows-1.0.1-sources.jar",
+          "size": 41202,
+          "sha512": "5bbb9c63d40f26289ac620c83bc4af3498a2640b886c5e02070220397299dc2d4231f374d06bb3534290f5b750c6124510fbb9351ba3e505544ba17f8eedf561",
+          "sha256": "6af75a865ba406e04cc85a3debe889812302cf880f589689447617b8a5a450f2",
+          "sha1": "13c9dd629bcd18808fb03a680125e21676332fa9",
+          "md5": "e0222a14c24a77f52c50a994f198e1ae"
+        }
+      ]
+    }
+  ]
+}

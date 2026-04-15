@@ -1,0 +1,36 @@
+[versions]
+agp = "9.0.0-alpha06"
+kotlin = "2.3.10"
+kotlinx-coroutines = "1.10.2"
+kotlin-logging = "8.0.01"
+slf4j = "2.0.17"
+kotlinx-serialization = "1.10.0"
+
+dream-multiplatform-everything = "1.5.1"
+yukireflection-kotlin = "1.0.5"
+root-su = "6.0.0"
+annotationJvm = "1.9.1"
+maven-publish = "0.36.0"
+
+[libraries]
+
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-logging = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json",version.ref = "kotlinx-serialization" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+androidx-annotation-jvm = { group = "androidx.annotation", name = "annotation-jvm", version.ref = "annotationJvm" }
+
+dream-everything = { group = "io.github.dreammooncai", name = "multiplatform-everything", version.ref = "dream-multiplatform-everything" }
+yukireflection-api-kotlin = { group = "io.github.dreammooncai.yukireflection", name = "api-kotlin", version.ref = "yukireflection-kotlin" }
+root-su-core = { group = "com.github.topjohnwu.libsu", name = "core", version.ref = "root-su" }
+root-su-service = { group = "com.github.topjohnwu.libsu", name = "service", version.ref = "root-su" }
+root-su-nio = { group = "com.github.topjohnwu.libsu", name = "nio", version.ref = "root-su" }
+
+[plugins]
+androidLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }

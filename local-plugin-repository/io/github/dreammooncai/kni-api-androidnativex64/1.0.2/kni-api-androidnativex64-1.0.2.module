@@ -1,0 +1,122 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kni-api/1.0.2/kni-api-1.0.2.module",
+    "group": "io.github.dreammooncai",
+    "module": "kni-api",
+    "version": "1.0.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "io.github.oshai",
+          "module": "kotlin-logging",
+          "version": {
+            "requires": "7.0.14"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "io.github.dreammooncai",
+          "module": "multiplatform-everything",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect"
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kni-api-androidNativeX64Main-1.0.2.klib",
+          "url": "kni-api-androidnativex64-1.0.2.klib",
+          "size": 317643,
+          "sha512": "a4a2911f16d712e6c70f21480a7f307e2b5483575f846187ed9e38ae05516d6630b0885fd19392bc8fb3c281a9c11e0d9a362fc4ad5f889894e7ce960d34f973",
+          "sha256": "41fa84b6d7b92a53e8c7dd99c5d269f178290807a45b5dad39ea4ae022743a8d",
+          "sha1": "645af345ab7c60829e40f71587a9ee791364e5ff",
+          "md5": "f0ae46ceb1630083a19071d55dc362a4"
+        },
+        {
+          "name": "kni-api-androidNativeX64Cinterop-jniMain-1.0.2.klib",
+          "url": "kni-api-androidnativex64-1.0.2-cinterop-jni.klib",
+          "size": 16381,
+          "sha512": "05ade1301a08b6f39fe9b96d18dc9c57d13cde93457c7714baa09aed0a99026e6fb1eeb805efdd083f0e5616d67bdb8e603ad0f69ce10bb69abd12b226e2518d",
+          "sha256": "857aa4ea4027e7ffced78db366b1f99af9f689360fb6d83e9650e495d044d5fb",
+          "sha1": "8b40feaaf0af6473c490d54f3fd14aa7891b21c1",
+          "md5": "641f3cfeb7d6b725338f933830d12d0c"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kni-api-androidnativex64-1.0.2-sources.jar",
+          "url": "kni-api-androidnativex64-1.0.2-sources.jar",
+          "size": 41766,
+          "sha512": "3f4e9ce75a99082334fcc02d3dd4599e17bfe76894bb64378fee0ed587b3693e2d02c97693dc3b63eb5f17e273886ea31d20f3465c4e47687a1e20596cf93649",
+          "sha256": "6b4bb34915d06b5395272b93efbdd265be209f790daaba3c172c9b5348ee8fb6",
+          "sha1": "f613101d30e12a4ab0638e427e2434ae455269e0",
+          "md5": "f5aa7f1d0bd35fcf0719a24abbf1fa4c"
+        }
+      ]
+    }
+  ]
+}

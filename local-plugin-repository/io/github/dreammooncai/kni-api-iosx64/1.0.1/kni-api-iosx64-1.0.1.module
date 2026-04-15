@@ -1,0 +1,193 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kni-api/1.0.1/kni-api-1.0.1.module",
+    "group": "io.github.dreammooncai",
+    "module": "kni-api",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "io.github.oshai",
+          "module": "kotlin-logging",
+          "version": {
+            "requires": "7.0.14"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "io.github.dreammooncai",
+          "module": "multiplatform-everything",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect"
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kni-api-iosX64Main-1.0.1.klib",
+          "url": "kni-api-iosx64-1.0.1.klib",
+          "size": 314052,
+          "sha512": "c4d899df61ebc7b301468547f192cefc5f864eaaf0e8996a1d43a5907e1d44a8285f31488e492953645f286196aa7c1af0df0fb29fe08de3f2d96f16700a53ec",
+          "sha256": "e2602774e84cbc15ac3b56aa34f62328a58909caebeefd0fcd805d21f2d7ed05",
+          "sha1": "5f3b3aeced18a9a6c5648bcc9a6cff817af7bb6b",
+          "md5": "1549f00a867bbdd6a349f0fd13b90aec"
+        },
+        {
+          "name": "kni-api-iosX64Cinterop-jniMain-1.0.1.klib",
+          "url": "kni-api-iosx64-1.0.1-cinterop-jni.klib",
+          "size": 16410,
+          "sha512": "2130a1c0fab572f1578d0ed5f1d0534873f559ac737b3b03aa9a4c8eeb89cc605212af4da239cb108b0202c0fbe31a194a3df8e7e3ec6036155755943e9c5f54",
+          "sha256": "720523ba13c1083b802f04445c35c82c37acf22de67d6261514d009840794905",
+          "sha1": "93dc403a4b5d044dbaf2a4b6148279cd6342dc18",
+          "md5": "e498b705562ce020e7d129604b26fcd0"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kni-api-iosx64-1.0.1-sources.jar",
+          "url": "kni-api-iosx64-1.0.1-sources.jar",
+          "size": 41202,
+          "sha512": "5bbb9c63d40f26289ac620c83bc4af3498a2640b886c5e02070220397299dc2d4231f374d06bb3534290f5b750c6124510fbb9351ba3e505544ba17f8eedf561",
+          "sha256": "6af75a865ba406e04cc85a3debe889812302cf880f589689447617b8a5a450f2",
+          "sha1": "13c9dd629bcd18808fb03a680125e21676332fa9",
+          "md5": "e0222a14c24a77f52c50a994f198e1ae"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "io.github.oshai",
+          "module": "kotlin-logging",
+          "version": {
+            "requires": "7.0.14"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "io.github.dreammooncai",
+          "module": "multiplatform-everything",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect"
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kni-api-iosx64-1.0.1-metadata.jar",
+          "url": "kni-api-iosx64-1.0.1-metadata.jar",
+          "size": 33685,
+          "sha512": "84f7068e88b75607cf095e1b89ed28e159081b102f10030cc510414381a38abfa7d1e65750fc854e19ab8b90475874608adc321cfecce464f9b1ae7f0b8d8d45",
+          "sha256": "2a1ec6e84fb2b01ada905803a83b7f386d7407fd29c93cd0c972f7a8dc59d0e3",
+          "sha1": "44ac6aef34bc65fd2539eac9a16ea01c1b3fbd0c",
+          "md5": "93f73e0399d168ca4f19120636f95c8b"
+        }
+      ]
+    }
+  ]
+}
