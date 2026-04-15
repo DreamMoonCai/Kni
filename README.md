@@ -2,7 +2,7 @@
 
 [English](./README.md) | [中文](./README_zh.md)
 
-**Kni** is a Kotlin Multiplatform bridge library that enables seamless bidirectional communication between Kotlin/Native (compiled via Kotlin/Native) and Java/JVM. Unlike traditional JNI bridging which requires manual C/C++ glue code, Kni allows you to implement the entire bridge in pure Kotlin while maintaining native-level performance.
+**Kni** is a Kotlin Multiplatform bridge library that enables seamless bidirectional communication between Kotlin/Native (compiled via Kotlin/Native) and Kotlin/JVM. Unlike traditional JNI bridging which requires manual C/C++ glue code, Kni allows you to implement the entire bridge in pure Kotlin while maintaining native-level performance.
 
 ## Installation
 

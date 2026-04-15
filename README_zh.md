@@ -2,7 +2,7 @@
 
 [English](./README.md) | [中文](./README_zh.md)
 
-**Kni** 是一个 Kotlin 多平台桥接库，实现了 Kotlin/Native（通过 Kotlin/Native 编译）与 Java/JVM 之间的无缝双向通信。与传统的 JNI 桥接不同，传统方式需要手动编写 C/C++ 胶水代码，而 Kni 允许你用纯 Kotlin 编写整个桥接实现，同时保持原生级性能。
+**Kni** 是一个 Kotlin 多平台桥接库，实现了 Kotlin/Native（通过 Kotlin/Native 编译）与 Kotlin/JVM 之间的无缝双向通信。与传统的 JNI 桥接不同，传统方式需要手动编写 C/C++ 胶水代码，而 Kni 允许你用纯 Kotlin 编写整个桥接实现，同时保持原生级性能。
 
 ## 安装
 
