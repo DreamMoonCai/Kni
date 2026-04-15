@@ -424,9 +424,6 @@ val javaUser = User::class.java.serialize(kotlinUser)
 // 反序列化：Java 对象 → Kotlin 对象
 val backToKotlin = User::class.java.deserialize<User>(javaUser)
 
-// 获取字段值
-val name: String = javaUser.jObject.asAnyKni<String>("name")
-
 // 转为 JSON
 val json: String = javaUser.toJson()
 ```

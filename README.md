@@ -392,9 +392,6 @@ val javaUser = User::class.java.serialize(kotlinUser)
 // Deserialize: Java object → Kotlin object
 val backToKotlin = User::class.java.deserialize<User>(javaUser)
 
-// Get field value
-val name: String = javaUser.jObject.asAnyKni<String>("name")
-
 // Convert to JSON
 val json: String = javaUser.toJson()
 ```
