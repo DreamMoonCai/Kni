@@ -236,7 +236,7 @@ JVM 实现有两种写法：**普通实现**和**内联实现**。
 逻辑写在 `actual fun` 中，注册回调直接调用它：
 
 ```kotlin
-// jvmMain 中
+// nativeMain 中
 override fun KniRegister.onRegister() {
     ::reverse.register(staticCFunction { _, _, str: jstring ->
         reverse(str.asString).asJni  // 调用 actual fun
@@ -252,7 +252,7 @@ actual fun reverse(input: String): String =
 `actual fun` 只用占位符，所有逻辑写在注册回调中：
 
 ```kotlin
-// jvmMain/kotlin/org/example/StringUtil.kt
+// nativeMain/kotlin/org/example/StringUtil.kt
 package org.example
 
 actual object StringUtil: IKniRegister {

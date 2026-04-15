@@ -234,7 +234,7 @@ JVM implementation has two styles: **normal implementation** and **inline implem
 Logic is in `actual fun`, register callback just calls it:
 
 ```kotlin
-// In jvmMain
+// In nativeMain
 override fun KniRegister.onRegister() {
     ::reverse.register(staticCFunction { _, _, str: jstring ->
         reverse(str.asString).asJni  // Call actual fun
