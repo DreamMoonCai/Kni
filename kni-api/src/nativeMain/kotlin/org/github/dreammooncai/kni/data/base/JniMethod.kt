@@ -101,6 +101,11 @@ abstract class JniMethod(bridge: KniBridge) : KniBridge(bridge) {
         (modifiers and 0x0008) != 0
     }
 
+    val isPublic by lazy {
+        // java.lang.reflect.Modifier.PUBLIC = 0x0001
+        (modifiers and 0x0001) != 0
+    }
+
     override fun toString(): String {
         return "$asSign"
     }

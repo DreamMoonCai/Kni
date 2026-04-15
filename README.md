@@ -281,15 +281,12 @@ When function parameters contain complex types, conversion is needed in the call
 expect object DataFormatter {
     fun format(
         data: List<String>,
-        style: FormatStyle,  // Enum parameter
-        callback: OnResultListener  // Callback parameter
+        style: FormatStyle,        // Enum parameter
+        callback: (String) -> Unit // Higher-order function callback
     ): String
 }
 
 enum class FormatStyle { JSON, XML, CSV }
-expect fun interface OnResultListener {
-    fun onResult(result: String)
-}
 ```
 
 ```kotlin
@@ -310,7 +307,7 @@ actual object DataFormatter: IKniRegister {
                 val items = data.asList.map { it!!.jObject.asString }
 
                 // Java callback → Kotlin Lambda
-                val listener = callback.asKniCallback<KniAny, Unit>()
+                val onResult: (String) -> Unit = callback.asKniCallback()
 
                 // Business logic
                 val result = when (formatStyle) {
@@ -320,9 +317,9 @@ actual object DataFormatter: IKniRegister {
                 }
 
                 // Callback notification
-                listener(KniAny(result))
+                onResult(result)
 
-                result
+                result.asJni
             }
         })
     }
@@ -685,8 +682,8 @@ interface ICalculatorService : IDreamIPC {
     fun getUser(id: Long): User
     fun searchUsers(query: String): List<User>
 
-    // ✅ Interface types will be proxied
-    fun setCallback(callback: IOnResultListener<String>)
+    // ✅ Higher-order function callbacks will be proxied
+    fun setCallback(callback: (String) -> Unit)
 
     // ❌ Custom regular class cannot be transmitted
     // fun getCustomObject(): CustomClass  // Will throw error!
@@ -712,7 +709,7 @@ val service = DreamSmartIPC.asClientAutoProxy<ICalculatorService>(binder, ICalcu
 interface ICalculatorService : IDreamIPC {
     fun add(a: Int, b: Int): Int
     fun multiply(a: Int, b: Int): Int
-    fun calculateAsync(a: Int, b: Int, callback: IOnResultListener<Int>)
+    fun calculateAsync(a: Int, b: Int, callback: (Int) -> Unit)
 }
 ```
 
@@ -723,8 +720,8 @@ interface ICalculatorService : IDreamIPC {
 object CalculatorService : ICalculatorService {
     actual fun add(a: Int, b: Int): Int = a + b
     actual fun multiply(a: Int, b: Int): Int = a * b
-    actual fun calculateAsync(a: Int, b: Int, callback: IOnResultListener<Int>) {
-        callback.onResult(a * b)
+    actual fun calculateAsync(a: Int, b: Int, callback: (Int) -> Unit) {
+        callback(a * b)
     }
 }
 ```

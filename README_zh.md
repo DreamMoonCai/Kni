@@ -313,15 +313,12 @@ fun kniOnUnload(vm: CPointer<JavaVMVar>, reserved: COpaquePointer) {
 expect object DataFormatter {
     fun format(
         data: List<String>,
-        style: FormatStyle,  // 枚举参数
-        callback: OnResultListener  // 回调参数
+        style: FormatStyle,        // 枚举参数
+        callback: (String) -> Unit // 高阶函数回调
     ): String
 }
 
 enum class FormatStyle { JSON, XML, CSV }
-expect fun interface OnResultListener {
-    fun onResult(result: String)
-}
 ```
 
 ```kotlin
@@ -342,7 +339,7 @@ actual object DataFormatter: IKniRegister {
                 val items = data.asList.map { it!!.jObject.asString }
 
                 // Java 回调 → Kotlin Lambda
-                val listener = callback.asKniCallback<KniAny, Unit>()
+                val onResult: (String) -> Unit = callback.asKniCallback()
 
                 // 执行业务逻辑
                 val result = when (formatStyle) {
@@ -352,9 +349,9 @@ actual object DataFormatter: IKniRegister {
                 }
 
                 // 回调通知
-                listener(KniAny(result))
+                onResult(result)
 
-                result
+                result.asJni
             }
         })
     }
@@ -717,8 +714,8 @@ interface ICalculatorService : IDreamIPC {
     fun getUser(id: Long): User
     fun searchUsers(query: String): List<User>
 
-    // ✅ 接口类型会代理传输
-    fun setCallback(callback: IOnResultListener<String>)
+    // ✅ 高阶函数回调会代理传输
+    fun setCallback(callback: (String) -> Unit)
 
     // ❌ 自定义普通类无法传输
     // fun getCustomObject(): CustomClass  // 会抛出错误！
@@ -746,7 +743,7 @@ val service = DreamSmartIPC.asClientAutoProxy<ICalculatorService>(binder, ICalcu
 interface ICalculatorService : IDreamIPC {
     fun add(a: Int, b: Int): Int
     fun multiply(a: Int, b: Int): Int
-    fun calculateAsync(a: Int, b: Int, callback: IOnResultListener<Int>)
+    fun calculateAsync(a: Int, b: Int, callback: (Int) -> Unit)
 }
 ```
 
@@ -757,8 +754,8 @@ interface ICalculatorService : IDreamIPC {
 object CalculatorService : ICalculatorService {
     actual fun add(a: Int, b: Int): Int = a + b
     actual fun multiply(a: Int, b: Int): Int = a * b
-    actual fun calculateAsync(a: Int, b: Int, callback: IOnResultListener<Int>) {
-        callback.onResult(a * b)
+    actual fun calculateAsync(a: Int, b: Int, callback: (Int) -> Unit) {
+        callback(a * b)
     }
 }
 ```
