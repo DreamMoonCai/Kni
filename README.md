@@ -289,7 +289,7 @@ enum class FormatStyle { JSON, XML, CSV }
 ```
 
 ```kotlin
-// jvmMain - Inline implementation
+// nativeMain - Inline implementation
 actual object DataFormatter: IKniRegister {
     override fun KniRegister.onRegister() {
         ::format.register(staticCFunction { _, _,
