@@ -219,8 +219,8 @@ actual object StringUtil : IKniRegister {
     override fun KniRegister.onRegister() {
         // Register JNI callback
         ::reverse.register(staticCFunction { _, _, str: jstring ->
-            kni {
-                str.asString.reversed()  // Only use asString, no asJni needed
+            kniResultJava {
+                str.asString.reversed().asJni  // jstring conversions need kniResultJava
             }
         })
     }
