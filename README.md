@@ -404,18 +404,23 @@ Kni provides a fluent reflection API using string class names:
 
 ```kotlin
 // Get current time (equivalent to System.currentTimeMillis())
-val time: Long = "java.lang.System".toClass().method { name = "currentTimeMillis" }.long()
+val time: Long = "java.lang.System".toClass().method {
+    name = "currentTimeMillis"
+    returnType = Long::class  // Return type
+}.long()
 
 // Call instance method (equivalent to user.getName())
 val name: String = "com.example.User".toClass().method {
     name = "getName"
+    returnType = String::class  // Return type
     thisRef = userObj.asKni  // This reference for instance method
 }.string()
 
-// Call method with parameters
+// Call method with parameters (no param type needed if parameters are empty)
 val result: Boolean = "com.example.StringUtil".toClass().method {
     name = "validate"
-    param(StringClass, IntClass)
+    returnType = Boolean::class  // Return type
+    param(String::class, Int::class)  // Parameter types
 }.boolean(param1, param2)
 ```
 
@@ -425,12 +430,14 @@ val result: Boolean = "com.example.StringUtil".toClass().method {
 // Get field value (equivalent to user.name)
 val name: String = "com.example.User".toClass().field {
     name = "name"
+    type = String::class  // Field type
     thisRef = userObj.asKni
 }.string()
 
 // Set field value (equivalent to user.name = "NewName")
 "com.example.User".toClass().field {
     name = "name"
+    type = String::class  // Field type
     thisRef = userObj.asKni
 }.set("NewName".asJni)
 ```
@@ -448,8 +455,9 @@ val name: String = "com.example.User".toClass().field {
 
 ```kotlin
 // Mix different parameter types
-val result = "com.example.Utils".toClass().method {
+val result: Boolean = "com.example.Utils".toClass().method {
     name = "process"
+    returnType = Boolean::class  // Return type
     // String class name
     param("java.lang.String")
     // KClass

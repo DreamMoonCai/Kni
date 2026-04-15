@@ -436,18 +436,23 @@ Kni 提供了简洁的字符串类名反射 API：
 
 ```kotlin
 // 获取当前时间（等价于 System.currentTimeMillis()）
-val time: Long = "java.lang.System".toClass().method { name = "currentTimeMillis" }.long()
+val time: Long = "java.lang.System".toClass().method {
+    name = "currentTimeMillis"
+    returnType = Long::class  // 返回类型
+}.long()
 
 // 调用实例方法（等价于 user.getName()）
 val name: String = "com.example.User".toClass().method {
     name = "getName"
+    returnType = String::class  // 返回类型
     thisRef = userObj.asKni  // 实例方法的 this 引用
 }.string()
 
-// 调用带参数的方法
+// 调用带参数的方法（参数为空不需要写参数类型）
 val result: Boolean = "com.example.StringUtil".toClass().method {
     name = "validate"
-    param(StringClass, IntClass)
+    returnType = Boolean::class  // 返回类型
+    param(String::class, Int::class)  // 参数类型
 }.boolean(param1, param2)
 ```
 
@@ -457,12 +462,14 @@ val result: Boolean = "com.example.StringUtil".toClass().method {
 // 获取字段值（等价于 user.name）
 val name: String = "com.example.User".toClass().field {
     name = "name"
+    type = String::class  // 字段类型
     thisRef = userObj.asKni
 }.string()
 
 // 设置字段值（等价于 user.name = "NewName"）
 "com.example.User".toClass().field {
     name = "name"
+    type = String::class  // 字段类型
     thisRef = userObj.asKni
 }.set("NewName".asJni)
 ```
@@ -480,8 +487,9 @@ val name: String = "com.example.User".toClass().field {
 
 ```kotlin
 // 多种参数类型混用
-val result = "com.example.Utils".toClass().method {
+val result: Boolean = "com.example.Utils".toClass().method {
     name = "process"
+    returnType = Boolean::class  // 返回类型
     // 使用字符串类名
     param("java.lang.String")
     // 使用 KClass
