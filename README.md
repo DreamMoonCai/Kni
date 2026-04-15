@@ -213,10 +213,6 @@ In `nativeMain`, implement all functions and implement `IKniRegister` interface:
 package org.example
 
 actual object StringUtil : IKniRegister {
-    init {
-        System.loadLibrary("native_tool")  // Load native library
-    }
-
     // Use notImplemented() as placeholder, actual logic is in register callback
     actual fun reverse(input: String): String = notImplemented()
 

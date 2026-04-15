@@ -214,9 +214,6 @@ actual object StringUtil {
 package org.example
 
 actual object StringUtil : IKniRegister {
-    init {
-        System.loadLibrary("native_tool")  // 加载原生库
-    }
 
     // 用 notImplemented() 占位，实际逻辑在注册回调中
     actual fun reverse(input: String): String = notImplemented()
