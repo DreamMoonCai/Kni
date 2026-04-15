@@ -332,8 +332,8 @@ actual object DataFormatter: IKniRegister {
 
 | Function | Purpose | Return Value Handling |
 |----------|---------|----------------------|
-| `kni {}` | Only use `asString` etc., no `asJni` needed | Return value not Pop-cleaned |
-| `kniResultJava {}` | Need to convert return value to Java | Auto `asJni`, return value not Pop-cleaned |
+| `kni {}` | Only use `asString` etc., no `asJni` needed | Return value will be Pop-cleaned |
+| `kniResultJava {}` | Need to convert return value to Java | Auto `asJni`, jobject in return value is preserved |
 
 Both are `KniBridge` extension functions, both use `tryLocalFrame` for local reference management.
 

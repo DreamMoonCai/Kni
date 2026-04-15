@@ -364,8 +364,8 @@ actual object DataFormatter: IKniRegister {
 
 | 函数 | 用途 | 返回值处理 |
 |------|------|----------|
-| `kni {}` | 只使用 `asString` 等转换，无需 `asJni` | 返回值不会被 PopLocalFrame 清理 |
-| `kniResultJava {}` | 需要将返回值转换为 Java 对象 | 自动 `asJni`，返回值不会被 PopLocalFrame 清理 |
+| `kni {}` | 只使用 `asString` 等转换，无需 `asJni` | 返回值会被 PopLocalFrame 清理 |
+| `kniResultJava {}` | 需要将返回值转换为 Java 对象 | 自动 `asJni`，返回值中的 jobject 会被保留 |
 
 两者都是 `KniBridge` 的扩展函数，内部都使用 `tryLocalFrame` 管理局部引用。
 
