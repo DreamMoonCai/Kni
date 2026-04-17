@@ -25,7 +25,7 @@ Add dependency to your `build.gradle.kts`:
 ```kotlin
 dependencies {
     // Core API (required for all platforms)
-    implementation("io.github.dreammooncai:kni-api:1.0.3")
+    implementation("io.github.dreammooncai:kni-api:1.0.4")
 }
 ```
 
@@ -41,7 +41,7 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.dreammooncai:kni-api:1.0.3")
+            implementation("io.github.dreammooncai:kni-api:1.0.4")
         }
     }
 }

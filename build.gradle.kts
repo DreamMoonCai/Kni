@@ -1,6 +1,6 @@
 buildscript {
     extra["kotlin_dream_group"] = "io.github.dreammooncai"
-    extra["kotlin_dream_version"] = "1.0.3"
+    extra["kotlin_dream_version"] = "1.0.4"
 }
 plugins {
     alias(libs.plugins.androidLibrary) apply false

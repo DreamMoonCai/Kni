@@ -25,7 +25,7 @@ pluginManagement {
 ```kotlin
 dependencies {
     // 核心 API（所有平台都需要）
-    implementation("io.github.dreammooncai:kni-api:1.0.3")
+    implementation("io.github.dreammooncai:kni-api:1.0.4")
 }
 ```
 
@@ -41,7 +41,7 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.dreammooncai:kni-api:1.0.3")
+            implementation("io.github.dreammooncai:kni-api:1.0.4")
         }
     }
 }
